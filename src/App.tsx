@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 import { searchItems, List, randomChars } from './List';
 
 function App() {
-  const [value, setValue] = useState('');
-  const [items, setItems] = useState(searchItems(value));
+  const [value, setValue] = useState<string>('');
+  const [items, setItems] = useState<string[]>([]);
+  const [isPending, startTransition] = useTransition();
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = e.target.value;
@@ -15,7 +16,7 @@ function App() {
     const value = randomChars();
     setValue(value);
     setItems(searchItems(value));
-  }
+  };
 
   return (
     <div>
@@ -23,7 +24,6 @@ function App() {
         <input value={value} onChange={handleChange} />
         <button onClick={handleRandom}>Random</button>
       </div>
-
       <List items={items} />
     </div>
   );

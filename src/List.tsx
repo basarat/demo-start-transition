@@ -7,7 +7,7 @@ export function searchItems(searchTerm: string) {
     () => {
       console.log(searchTerm);
       return (searchTerm ? (searchTerm + ' ') : '')
-      + Math.floor(Math.random() * COUNT)
+        + Math.floor(Math.random() * COUNT)
     }
   );
 }
