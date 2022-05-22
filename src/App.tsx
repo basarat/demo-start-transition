@@ -9,7 +9,9 @@ function App() {
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const value = e.target.value;
     setValue(value);
-    setItems(searchItems(value));
+    startTransition(() => {
+      setItems(searchItems(value));
+    });
   };
 
   const handleRandom = () => {

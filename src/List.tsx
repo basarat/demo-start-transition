@@ -1,5 +1,5 @@
 /** Tweak based on your machine performance to get some lag */
-const COUNT = 10000;
+const COUNT = 5000;
 
 /** Return a list of items based on @param searchTerm */
 export function searchItems(searchTerm: string) {
