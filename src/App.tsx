@@ -22,12 +22,12 @@ function App() {
 
   return (
     <div>
-      <div>
+      <div style={{ opacity: isPending ? .5 : 1 }}>
         <input value={value} onChange={handleChange} />
         <button onClick={handleRandom}>Random</button>
       </div>
       <List items={items} />
-    </div>
+    </div >
   );
 }
 
